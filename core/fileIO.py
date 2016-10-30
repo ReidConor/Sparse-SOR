@@ -1,12 +1,7 @@
 import numpy as np
 from scipy import sparse
 
-# this is just to check out how to do tests in python
-def add (x,y):
-    return x+y
-
 # read text file into A and b
-# doesnt use spare matrix storage
 def readFileIntoDict():
     lines = open('input.in','r').readlines()
     myDict = {}

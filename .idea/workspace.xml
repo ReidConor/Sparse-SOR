@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd13d333-d0d9-4d01-babd-0b64d78afbdc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/input.txt" afterPath="$PROJECT_DIR$/core/input.in" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/doMath.py" afterPath="$PROJECT_DIR$/core/doMath.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/fileIO.py" afterPath="$PROJECT_DIR$/core/fileIO.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/main.py" afterPath="$PROJECT_DIR$/core/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/testMain.py" afterPath="$PROJECT_DIR$/tests/testMain.py" />
     </list>
     <ignored path="Prog-Assignment2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+            <state relative-caret-position="105">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
                 <element signature="e#107#132#0" expanded="true" />
               </folding>
@@ -38,11 +36,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fileIO.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="testMain.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/testMain.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+              <folding>
+                <element signature="e#125#140#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fileIO.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/fileIO.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+            <state relative-caret-position="45">
+              <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -53,8 +63,8 @@
       <file leaf-file-name="doMath.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/doMath.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+            <state relative-caret-position="180">
+              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -79,15 +89,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/file1.py" />
-        <option value="$PROJECT_DIR$/tests/testMain.py" />
         <option value="$PROJECT_DIR$/core/fileInput" />
         <option value="$PROJECT_DIR$/core/IO/readingFiles.py" />
         <option value="$PROJECT_DIR$/core/math.py" />
         <option value="$PROJECT_DIR$/core/input.txt" />
-        <option value="$PROJECT_DIR$/core/doMath.py" />
         <option value="$PROJECT_DIR$/core/input.in" />
-        <option value="$PROJECT_DIR$/core/fileIO.py" />
         <option value="$PROJECT_DIR$/core/main.py" />
+        <option value="$PROJECT_DIR$/core/doMath.py" />
+        <option value="$PROJECT_DIR$/tests/testMain.py" />
+        <option value="$PROJECT_DIR$/core/fileIO.py" />
       </list>
     </option>
   </component>
@@ -200,7 +210,7 @@
       <recent name="$PROJECT_DIR$/core/files" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.testMain">
     <configuration default="false" name="file1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -411,9 +421,9 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.fileIO" />
-        <item index="2" class="java.lang.String" itemvalue="Python.testMain" />
+        <item index="0" class="java.lang.String" itemvalue="Python.testMain" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main" />
+        <item index="2" class="java.lang.String" itemvalue="Python.fileIO" />
         <item index="3" class="java.lang.String" itemvalue="Python.file1" />
       </list>
     </recent_temporary>
@@ -510,13 +520,6 @@
     <entry file="file://$PROJECT_DIR$/file2.py" />
     <entry file="file://$PROJECT_DIR$/file2.py" />
     <entry file="file://$PROJECT_DIR$/file1.py" />
-    <entry file="file://$PROJECT_DIR$/tests/testMain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/input.in">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -525,30 +528,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/doMath.py">
+    <entry file="file://$PROJECT_DIR$/tests/testMain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/fileIO.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+        <state relative-caret-position="135">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#125#140#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="e#107#132#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/doMath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/fileIO.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

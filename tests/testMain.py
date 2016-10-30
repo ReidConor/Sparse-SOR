@@ -1,7 +1,7 @@
 # This will hold all tests for the main program
 # All future tests should follow the same namig convention (test<core_file>)
 import unittest
-from core.main import add
+from core.doMath import add
 
 class MyTest(unittest.TestCase):
     def test_true(self):
