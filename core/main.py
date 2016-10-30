@@ -7,7 +7,8 @@ from core.doMath import *
 theProblemSpace = readFileIntoDict()
 
 #  check for zeros on the main diag (one of the stopping rules)
-if hasZerosOnMainDiag(theProblemSpace["A"]):
+# use todense() to give the nornal matrix representation of A
+if hasZerosOnMainDiag(theProblemSpace["A"].todense()):
     print ("Cant go on")
 else:
     print ("Continue")
