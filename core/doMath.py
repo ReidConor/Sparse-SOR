@@ -1,7 +1,32 @@
 import numpy as np
 import sys
+
+''' 
+Checking if zeros on the Diagonal
+'''
+
+
 def hasZerosOnMainDiag (A):
     return np.in1d(0, np.diagonal(A))
+ 
+'''
+Checking if matrix is strictly diagonally dominant
+'''
+    
+def isStrictlyDiagDom(A):
+    rowcol = np.shape(A)[1]
+    i = 0
+    j = 0
+    sumrow = 0 
+    count = 0
+    for i in range(n):
+        sumrow = 0
+        for j in range(n):
+            if i != j:
+                sumrow = sumrow + abs(A[i,j])
+        if abs(A[i,i]) > sumrow:
+            count += 1
+    return count
 
 '''
 findX_noSOR finds solution for x, ie not using SOR
