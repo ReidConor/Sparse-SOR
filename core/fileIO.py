@@ -24,8 +24,8 @@ def inputMatrix():
 Read matrix A and b into a dictionary
 '''
 
-def readFileIntoDict(m):
-    lines = open(m, 'r').readlines()
+def readFileIntoDict(inputFile):
+    lines = open(inputFile, 'r').readlines()
     myDict = {}
 
     A = []
@@ -40,11 +40,11 @@ def readFileIntoDict(m):
     return myDict
     
     
-def readFileMtx(m):
+def readFileMtx(inputFile):
     myDict = {}
 
     
-    A = m.asformat("csr")
+    A = inputFile.asformat("csr")
     dim = m.shape[1]
     b = np.random.randint(0,10,size=dim)
     
