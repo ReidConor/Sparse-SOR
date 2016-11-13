@@ -1,4 +1,3 @@
-
 from core.fileIO import *
 from core.doMath import *
 import logging
@@ -8,16 +7,19 @@ import os
 This will function as the main module of te python project
 and call all other modules that are written
 '''
+inputFile = (sys.argv[1] if len(sys.argv) == 2 else "./docs/input.in")
+outputFile = (sys.argv[2] if len(sys.argv) == 3 else "./logs/logs.out")
 
 '''
 set up logging
 this will function as our way of writing the stopping condition out to a file
 '''
-fn = os.path.join(os.path.dirname(__file__), '../logs/logs.txt')
+fn = os.path.join(os.path.dirname(__file__), outputFile)
 logging.basicConfig(filename=fn, filemode='w', level=logging.DEBUG)
 
+
 # get the problem space from txt file, ie. A and b from "Ax = b"
-theProblemSpace = readFileIntoDict()
+theProblemSpace = readFileIntoDict(inputFile)
 A = theProblemSpace["A"]
 b = theProblemSpace["b"]
 
