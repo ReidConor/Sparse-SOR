@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd13d333-d0d9-4d01-babd-0b64d78afbdc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/doMath.py" afterPath="$PROJECT_DIR$/core/doMath.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/main.py" afterPath="$PROJECT_DIR$/core/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/testMain.py" afterPath="$PROJECT_DIR$/tests/testMain.py" />
     </list>
     <ignored path="Prog-Assignment2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+            <state relative-caret-position="270">
+              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -38,7 +35,7 @@
       <file leaf-file-name="doMath.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/doMath.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="-614">
               <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -47,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testMain.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="testMain.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/testMain.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -76,8 +73,8 @@
         <option value="$PROJECT_DIR$/logs/logs.txt" />
         <option value="$PROJECT_DIR$/core/input.in" />
         <option value="$PROJECT_DIR$/core/doMath.py" />
-        <option value="$PROJECT_DIR$/core/main.py" />
         <option value="$PROJECT_DIR$/tests/testMain.py" />
+        <option value="$PROJECT_DIR$/core/main.py" />
       </list>
     </option>
   </component>
@@ -388,9 +385,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="27" width="1112" height="1004" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28057554" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28057554" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -752,19 +749,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/testMain.py">
+    <entry file="file://$PROJECT_DIR$/core/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="76" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
-          <folding>
-            <element signature="e#125#140#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/doMath.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="-614">
           <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -772,11 +767,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/main.py">
+    <entry file="file://$PROJECT_DIR$/tests/testMain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-          <folding />
+        <state relative-caret-position="285">
+          <caret line="19" column="76" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
+          <folding>
+            <element signature="e#125#140#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -21,9 +21,6 @@ theProblemSpace = readFileIntoDict()
 A = theProblemSpace["A"]
 b = theProblemSpace["b"]
 
-print(A)
-print(b)
-
 logging.info('Starting SOR')  # will not print anything
 
 '''
