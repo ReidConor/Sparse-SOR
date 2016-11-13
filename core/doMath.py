@@ -134,8 +134,3 @@ There are two common ways to measure the discrepancy between the true solution x
 '''
 def find_residual (A,x,b):
     return np.linalg.norm(b - A.dot(x))
-
-
-# this is just to check out how to do tests in python
-def add (x,y):
-    return x+y
