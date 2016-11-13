@@ -3,6 +3,7 @@ Holds the python project for using the Sparse-SOR algorithm to solve a system of
 
 
 To run via the command line;
+
     To run with default input and output;
     >> python main.py
 
