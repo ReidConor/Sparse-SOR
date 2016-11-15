@@ -1,29 +1,10 @@
 import numpy as np
 from scipy import sparse
-from scipy.io import mminfo,mmread
 
-#ask for path of file
-
-'''
-Ask user to input matrix
-'''
-
-def inputMatrix():
-    f = input("\n Hello, user. "
-        "\n \n Please type in mtx if you are using an mtx file or txt if you are using a text file and press 'Enter': ")
-    if f=='mtx':
-        inputmtx = input("\n \n Please type in the path of the mtx file and press 'Enter': ")
-        m =  mmread(inputmtx)
-    elif f == 'txt':
-        inputtxt = input("\n \n Please type in the path of the txt file and press 'Enter': ")
-        m =  inputtxt 
-    return f, m
-    
 
 '''
 Read matrix A and b into a dictionary
 '''
-
 def readFileIntoDict(inputFile):
     lines = open(inputFile, 'r').readlines()
     myDict = {}
@@ -42,13 +23,10 @@ def readFileIntoDict(inputFile):
     
 def readFileMtx(inputFile):
     myDict = {}
-
-    
-    A = inputFile.asformat("csr")
-    dim = m.shape[1]
-    b = np.random.randint(0,10,size=dim)
+    A = sparse.csr_matrix(np.loadtxt(inputFile))
+    dim = A.shape[1]
+    b = np.random.randint(0, 10, size=dim)
     
     myDict["A"] = A
     myDict["b"] = b
     return myDict
-    

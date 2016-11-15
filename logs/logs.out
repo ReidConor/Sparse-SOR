@@ -1,8 +1,5 @@
-INFO:root:Starting SOR
-INFO:root:Can continue...
-INFO:root:solution (direct) is: 
-INFO:root:[[ 1.    0.4   3.    4.    0.84]]
-INFO:root:
-INFO:root:stopped in: 15 iterations 
-INFO:root:final error is: 0.000423493636315 
-INFO:root:answer according to SOR is: [ 1.00003052  0.40001221  3.00009155  4.00012207  0.83991577] 
+INFO:root:Starting SOR...
+INFO:root:stopped in: 1 iterations 
+INFO:root:final error is: 311.914763113 
+INFO:root:answer according to SOR is: [  10.5         -19.5         311.12749709] 
+INFO:root:Starting Black Scholes model...

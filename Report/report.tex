@@ -42,6 +42,8 @@
 \graphicspath{ {images/} }
 
 \usepackage{indentfirst}
+\usepackage{dirtree}
+
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
 
@@ -117,10 +119,51 @@
 \tableofcontents
 \clearpage
 \onecolumn
-\section{The Content}
-\lipsum[3]
+\section{Introduction}
+\clearpage
+\section{Theory}
+\subsection {Business Application}
+\subsection {Black-Schols}
+\subsection {Iterative algorithms / SOR}
+\clearpage
+\section{Code Base}
+\subsection {Version Control}
+{Put in something about using GIT, make us look really smart}
+\subsection {Structure / Packages}
+{Brief overview of the code base, hows its structured. Can refer to the below.}\\\\
+\dirtree{%
+.1 Sparse-SOR.
+.2 Report.
+.3 Latex files...
+.3 Report.pdf.
+.2 core.
+.3 doMath.py.
+.3 fileIO.py.
+.3 tridiagM.py.
+.2 docs.
+.3 input.in.
+.3 Background docs...
+.2 logs.
+.2 tests.
+.3 testMain.py.
+.2 main.py.
+.2 README.md.
+}
+\subsection {Run Time}
+{How do we run this at runtime? ie how can you modify the inputs / outputs etc}
+\subsection {Testing}
+{Why testings important, how we found it really useful all the way through the assignment (lol). Brief overview of what tests we have included, maybe some specific problem we meet and how testing helped us solve it?}
+\clearpage
+\section{Technical Challenges and Limitations}
+{What were the main technical challenges we faced doing this. What are the limitations of our brilliant solution }
+\clearpage
+\section{Results}
+{Our fantastic results}
+\clearpage
+\section{Conclusions}
 \clearpage
 \section*{Appendix}
+{Any figures we want to show}
 \clearpage
 \begin{thebibliography}{9}
 \bibitem{someitem} 
