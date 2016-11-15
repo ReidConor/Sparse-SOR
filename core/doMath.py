@@ -1,5 +1,7 @@
 import numpy as np
 import sys
+from pprint import pprint
+from numpy import math, linalg, zeros, diag, dot, diagflat,array
 
 ''' 
 Checking if zeros on the Diagonal
