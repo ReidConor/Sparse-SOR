@@ -68,7 +68,7 @@ def Sparse_SOR(A,b,maxits,epsilon,w):
 #    
         
 #### Example
-m = csr_matrix(np.matrix([[1,0,0],[0,3,0],[0,1,3]]))
+matrix_example = csr_matrix(np.matrix([[1,0,0],[0,3,0],[0,1,3]]))
 
 n = matrix_example.get_shape()[1]
 

@@ -32,12 +32,13 @@ use todense() to give the normal matrix representation of A
 
 if hasZerosOnMainDiag(A.todense()):
     logging.error("Error Found...")
-    logging.error("Zeros on the main diagonal!")
+    logging.error("Zero on diagonal")
 if not isStrictlyDiagonallyDominant(A.todense()):
     logging.error("Error Found...")
-    logging.error("A is not strictly diagonally dominant!")
+    logging.error("x Sequence divergence"")
 else:
     logging.info("Can continue...")
+    logging.info("x Sequence convergence")
     logging.info("solution (direct) is: ")
     logging.info(findX_direct(A, b))
     logging.info("")
@@ -45,6 +46,10 @@ else:
     # passing dummy values until I end up using them correctly in the function
     # if its zero, its not used
     resultsDict = Sparse_SOR(A, b, 0, 200, 1.5, np.zeros(b.shape[0]), 0.0005)
+    if resultsDict["iterations"] == 200 -1:
+        logging.info("Max Iterations reached")
+    elseif  resultsDict["finalError"] < 0.0005:
+        logging.info("Residual convergence"")
     logging.info("stopped in: %s iterations ", resultsDict["iterations"])
     logging.info("final error is: %s ", resultsDict["finalError"])
     logging.info("answer according to SOR is: %s ", resultsDict["x"])

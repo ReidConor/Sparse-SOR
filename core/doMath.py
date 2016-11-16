@@ -1,5 +1,7 @@
 import numpy as np
 import sys
+from pprint import pprint
+from numpy import math, linalg, zeros, diag, dot, diagflat,array
 
 ''' 
 Checking if zeros on the Diagonal
@@ -134,3 +136,27 @@ There are two common ways to measure the discrepancy between the true solution x
 '''
 def find_residual (A,x,b):
     return np.linalg.norm(b - A.dot(x))
+
+def jacobi(A,b,N=25,x=None):                                                                                                                                                        
+    if x is None:
+        x = zeros(len(A[0]))                                                                                                                                                                   
+    D = diag(A)
+    R = A - diagflat(D)
+    for i in range(N):
+        x = (b - dot(R,x)) / D
+    return x
+    
+A = array([[9.0,-1.0,2.0],[-2.0,8.0,4.0],[1.0,1.0,8.0]])
+b = array([11.0,13.0,13.0])
+guess = array([1.0,1.0,1.0])
+
+sol = jacobi(A,b,N=25,x=guess)
+pprint(sol)
+T = np.matrix(A)
+
+spec_rad=np.max(np.linalg.eigvals(T))
+pprint(spec_rad)
+if spec_rad <1:
+    print("Matrix A will converge!")
+else:
+    print("Matrix A will not converge!")
