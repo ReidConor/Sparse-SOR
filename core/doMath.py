@@ -124,6 +124,7 @@ def Sparse_SOR (A,b,n,maxits,omega,x, error):
     resultsDict["x"] = x
     resultsDict["iterations"] = k
     resultsDict["finalError"] = err
+    resultsDict["Divergance"] = diver
     return resultsDict
 
 '''
@@ -133,4 +134,4 @@ There are two common ways to measure the discrepancy between the true solution x
     Residual: r = b − Axˆ
 '''
 def find_residual (A,x,b):
-    return np.linalg.norm(b - A.dot(x))
+    return np.linalg.norm(b - A.dot(x))    
