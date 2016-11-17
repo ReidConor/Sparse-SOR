@@ -1,6 +1,8 @@
-import numpy as np
-import sys
 
+import numpy as np
+from scipy.sparse import csc_matrix
+from matplotlib import pylab as plt
+import sys
 ''' 
 Checking if zeros on the Diagonal
 '''
@@ -23,8 +25,8 @@ def isStrictlyDiagDom(A):
         for j in range(rowcol):
             if i != j:
                 sumrow = sumrow + abs(A[i,j])
-                print(sumrow)
-        if abs(A[i,i]) > sumrow:
+                # print(sumrow)
+        if abs(A[i, i]) > sumrow:
             count += 1
     return count > 0
 
@@ -66,17 +68,20 @@ def findX_direct(A, b):
 omega must be > 1 to be the successive over-relaxation method.
 < 1 its the successive under-relaxation
 '''
-def Sparse_SOR(A, b, maxits, omega, x, error):
+
+
+def Sparse_SOR(A, b, n, maxits, omega, x, error):
     k = 0
     while k < maxits:
+        # omega_prev_prev = omega + 0.1
+        # omega_prev = omega + 0.05
         rows = b.shape[0]
         D = A.diagonal()
+        err = 10000
         xnorm = 0
-        err = 100
+        xnorm1 = 100
         while abs(err) > error:
             s = np.zeros(b.shape[0])
-            xnorm_0 = xnorm
-            err_0 = err
             for row in range(rows):
                 cols = A.indices[A.indptr[row]:A.indptr[row + 1]]
                 for j, col in enumerate(cols):
@@ -85,23 +90,21 @@ def Sparse_SOR(A, b, maxits, omega, x, error):
 
                 if D[row] != 0.0:
                     x[row] += omega * ((b[row] - s[row]) / D[row] - x[row])
-            xnorm = np.linalg.norm(x, ord=2)
-            err = xnorm - xnorm_0
-            print('iteration', k)
-            print('err', abs(err))
-            print('err_0', abs(err_0))
+            xnorm = np.linalg.norm(x, ord=rows)
+            err = xnorm - xnorm1
+            xnorm1 = xnorm
             k += 1
-            if abs(err) > abs(err_0):
-                print('*** Divergence detected ***')
+            if abs(xnorm) > abs(xnorm1):
+                print('divergence')
                 break
         break
 
-    # print('*** We have convergence ***')
     resultsDict = {}
     resultsDict["x"] = x
     resultsDict["iterations"] = k
     resultsDict["finalError"] = err
-    return resultsDict
+    return x
+
 
 '''
 From the notes:

@@ -28,7 +28,7 @@ logging.basicConfig(filename=fn, filemode='w', level=logging.DEBUG)
 '''
 start logging for part one
 '''
-logging.info('Starting SOR...')
+logging.info('Starting SOR...assignment part one')
 
 '''
 program flow depends on input file type
@@ -52,13 +52,9 @@ if file_extension == ".in":
     else:
         logging.info("Can continue...")
         logging.info("solution (direct) is: ")
-        logging.info(findX_direct(A, b))
-        logging.info("")
-
-        resultsDict = Sparse_SOR(A, b, 200, 1.5, np.zeros(b.shape[0]), 0.0005)
-        logging.info("stopped in: %s iterations ", resultsDict["iterations"])
-        logging.info("final error is: %s ", resultsDict["finalError"])
-        logging.info("answer according to SOR is: %s ", resultsDict["x"])
+        logging.info("The direct answer is: %s", findX_direct(A, b))
+        resultsDict = Sparse_SOR(A, b, 1, 200, 1.5, np.zeros(b.shape[0]), 0.0005)
+        logging.info("The answer according to SOR is: %s", resultsDict)
 
 
 elif file_extension == ".mtx":
@@ -66,22 +62,48 @@ elif file_extension == ".mtx":
     A = theProblemSpaceMtx["A"]
     b = theProblemSpaceMtx["b"]
 
-    resultsDict = Sparse_SOR(A, b, 200, 1.5, np.zeros(b.shape[0]), 0.00000005)
-    logging.info("stopped in: %s iterations ", resultsDict["iterations"])
-    logging.info("final error is: %s ", resultsDict["finalError"])
-    logging.info("answer according to SOR is: %s ", resultsDict["x"])
+    if hasZerosOnMainDiag(A.todense()):
+        logging.error("Error Found...")
+        logging.error("Zeros on the main diagonal!")
+
+    # look into a module for spectral radius in python
+    # check to see if the matrix is diagonally dominant
+    if not isStrictlyDiagDom(A.todense()):
+        logging.error("Error Found...")
+        logging.error("A is not strictly diagonally dominant!")
 
 else:
     logging.error("File input type not recognised")
 
 
 
-'''
-start logging for part two
-'''
-logging.info('Starting Black Scholes model...')
-S, t = createSandT(50.0, 12, 1)  # Vector of stock price (grid points)
+logging.info('Starting Black Scholes model...assignment part two')
 
-a, b, c = abcArrays(S, t, 0.3, 0.02)  # a is the bottom diag, b is the centre diag, c is top diag
-A = tridiag(a, b, c)
-print(A)
+# General parameters
+S0 = 0
+SMax = 150
+T = 12
+k = 1
+X = 50
+
+# Parameters for SOR_Sparse
+sigma = 0.3
+r = 0.02
+maxits = 100
+omega = 1.5
+error = 0.0005
+
+S, t, matrixsize, h = createSandT(S0, SMax, T, k)  # Vector of stock price (grid points)
+fnM = vectorB(X, S, h)  # bvec gives fn,m or the option prices at time T.
+a, b, c = abcArrays(S, t, sigma, r)  # a is the bottom diag, b is the centre diag, c is top diag
+A = sparse.csr_matrix(tridiag(a, b, c))
+n = A.shape[1]
+x = np.zeros(n)
+# Sparse_SOR(A, fnM, n, maxits, omega, x, error) #SOR solves Ax = b
+# fnm0 is fn,m-1. its the result from solving Ax=b in SOR (A xSOR = bvec)
+
+pastfnm = findPastOptionPrices(A, fnM, n, maxits, omega, x, error, T, k)
+logging.info('f_{n,m= %s } (m=M=T=12) = %s', 12, fnM)
+logging.info('------')
+for i in range(len(pastfnm) - 1, -1, -1):
+    logging.info('f_{n, %s } = %s', i, pastfnm[i])

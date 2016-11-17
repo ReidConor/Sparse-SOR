@@ -1,6 +1,7 @@
 import numpy as np
 from scipy import sparse
-
+from scipy.io import mmread
+from scipy.sparse import csr_matrix
 
 '''
 Read matrix A and b into a dictionary
@@ -23,10 +24,14 @@ def readFileIntoDict(inputFile):
     
 def readFileMtx(inputFile):
     myDict = {}
-    A = sparse.csr_matrix(np.loadtxt(inputFile))
-    dim = A.shape[1]
+    # A = sparse.csr_matrix(np.loadtxt(inputFile))
+    print (inputFile)
+    m = mmread('/Users/Conor/Google Drive/MSc/NMS_1/Prog_Assignment2/Sparse-SOR/docs/plat1919.mtx')
+    m = m.asformat("csr")
+
+    dim = m.shape[1]
     b = np.random.randint(0, 10, size=dim)
     
-    myDict["A"] = A
+    myDict["A"] = m
     myDict["b"] = b
     return myDict
