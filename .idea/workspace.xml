@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd13d333-d0d9-4d01-babd-0b64d78afbdc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/doLogs.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/visualize.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Report/report.bbl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Report/report.blg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/another_logs.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/logs.out" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/images/logo.png" afterPath="$PROJECT_DIR$/Report/images/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.pdf" afterPath="$PROJECT_DIR$/Report/report.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.synctex.gz" afterPath="$PROJECT_DIR$/Report/report.synctex.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.aux" afterPath="$PROJECT_DIR$/Report/report.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.log" afterPath="$PROJECT_DIR$/Report/report.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.tex" afterPath="$PROJECT_DIR$/Report/report.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.toc" afterPath="$PROJECT_DIR$/Report/report.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/doMath.py" afterPath="$PROJECT_DIR$/core/doMath.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/fileIO.py" afterPath="$PROJECT_DIR$/core/fileIO.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/tridiagM.py" afterPath="$PROJECT_DIR$/core/tridiagM.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TestingC.py" afterPath="$PROJECT_DIR$/tests/TestingC.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/BSM_plot.png" afterPath="" />
     </list>
     <ignored path="Prog-Assignment2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,8 +61,8 @@
       <file leaf-file-name="tridiagM.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/tridiagM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="119" column="29" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
+            <state relative-caret-position="363">
+              <caret line="106" column="6" selection-start-line="106" selection-start-column="6" selection-end-line="106" selection-end-column="6" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -515,14 +497,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1845" y="-13" width="1807" height="1023" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17321527" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17321527" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32285115" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32285115" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -809,8 +791,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/tridiagM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="119" column="29" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
+        <state relative-caret-position="363">
+          <caret line="106" column="6" selection-start-line="106" selection-start-column="6" selection-end-line="106" selection-end-column="6" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
