@@ -1,23 +1,29 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov 14 16:25:21 2016
-
-@author: Carnec
-"""
 import os
 import sys
 import numpy as np
 from scipy import sparse
+
 from core.doMath import *
+from core.doMath import Sparse_SOR
+from core.fileIO import *
+
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import cm
+from matplotlib.ticker import LinearLocator, FormatStrFormatter
+import matplotlib.pyplot as plt
+
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import cm
+from matplotlib.ticker import LinearLocator, FormatStrFormatter
+import matplotlib.pyplot as plt
 
 
-def createSandT(S0, SMax, T, k):  # Smax is price so option value is zero #T is maturity
+def createSandT(S0, SMax, T, M, k):  # Smax is price so option value is zero #T is maturity
     tm = 0
     S = [S0]
     t = [0]
     matrixsize = int(T / k)
-    h = SMax / (T)
+    h = SMax / (M)
     for i in range(matrixsize):
         S0 = S0 + h
         S.append(S0)
@@ -69,9 +75,46 @@ def vectorB(X, S, h):
 def findPastOptionPrices(A, fNM, n, maxits, omega, x, error, T, k):
     M = int(T / k)
     fnmDict = {}
-    for i in range(M - 1, -1, -k):
-        x = Sparse_SOR(A, fNM, n, maxits, omega, x, error)
+    for i in range(M, -1, -1):
+        resultsDict = Sparse_SOR(A, fNM, n, maxits, omega, x, error)
+        x = resultsDict["x"]
         fnmDict[i] = x
         fNM = x
         x = np.zeros(n)
     return fnmDict
+
+
+def runBSM(outputLogFile):
+    # General parameters
+    S0 = 0
+    SMax = 150
+    T = 12
+    M = 40
+    k = T / M
+    X = 100
+
+    # Parameters for SOR_Sparse
+    sigma = 0.3
+    r = 0.02
+    maxits = 100
+    omega = 1.5
+    error = 0.0005
+
+    S, t, matrixsize, h = createSandT(S0, SMax, T, M, k)  # Vector of stock price (grid points)
+    fnM = vectorB(X, S, h)  # bvec gives fn,m or the option prices at time T.
+    a, b, c = abcArrays(S, t, sigma, r)  # a is the bottom diag, b is the centre diag, c is top diag
+    A = sparse.csr_matrix(tridiag(a, b, c))
+    n = A.shape[1]
+    x = np.zeros(n)
+
+    pastfnm = findPastOptionPrices(A, fnM, n, maxits, omega, x, error, T, k)
+    target = open(outputLogFile, 'w')
+
+
+    target.write('Approximation of Option Prices at T+1 : %s' % fnM)
+    target.write('')
+    for i in range(len(pastfnm) - 1, -1, -1):
+        target.write('f_{n, %s } = %s' % (i, pastfnm[i]))
+
+    ''' 3D PLOT'''
+    genBSMPlot(S, t, pastfnm)

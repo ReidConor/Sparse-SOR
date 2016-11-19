@@ -18,7 +18,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[paper=a4, fontsize=10pt]{article} % A4 paper and 10pt font size
+\documentclass[paper=a4, fontsize=10pt]{scrartcl} % A4 paper and 10pt font size
 
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 %\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
@@ -42,6 +42,8 @@
 \graphicspath{ {images/} }
 
 \usepackage{indentfirst}
+\usepackage{dirtree}
+
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
 
@@ -117,95 +119,51 @@
 \tableofcontents
 \clearpage
 \onecolumn
-
-\section{Overview}
-
-\subsection{Mathematical Issues}
-
-\subsubsection{4.0}
-\subsubsection{4.1}
-
-\subsection{Applications}
-
-\subsection{Questions}
-useful to check for convergence of the residual to zero?\\
-what matrix norms might be useful and why?\\
-scaling be helpful?\\
-which matrices do you get expect convergence and which do not? why?\\
-effect of different values of tolerance?\\
-effect of an ill-conditioned matrix?\\
-
-\section{Design}
-
-\subsection{4.0}
-\subsection{4.1}
-
-The implementation of the Black-Scholes-Merton pricing problem found in the module \texttt{tridiagM.py} takes advantage of the fact that the Black-Scholes differential equation as a system of linear equations ($\textbf{A}\textbf{f} = \textbf{b}$) can be written as a tridiagonal $(N-1)\times(N-1)$ matrix. This tridiagonal matrix, $\textbf{A}$, which by definition is a sparse matrix, can be solved using the Sparse SOR algorithm
- which solves for vector $\textbf{x}$ the system of linear equations $\textbf{A}\textbf{x} = \textbf{b}$ by successive iteration. 
-
-We are able to approximate all option prices for a given stock price for all $m \in M$ by approximating the previous time step using a system of linear equations. There are two approximation in finding option prices for all time steps $m$. 
-
-The first of these entails approximating put option prices at time $T$ given Stock prices and a known put option strike price, $X$. Using this approximation for $f_{n,M}$, we can solve the system of linear equation for option prices at previous time periods $f_{n,m}$.
-
-Given that the matrix $\textbf{A}$ represents the finite difference constants relating $f_{n, m-1}$ to $f_{n, m-1}$ and that we can approximate the $N$ European put option prices at $f_{n,M}$, where $M=T$ and time at which the option is at maturity, given the fact that the portfolio must 
-
-$P = -f + \frac{\partial{f}}{\partial{S}}S$
-$\left( -\sigma S \frac{\partial{f}}{\partial{S}} +\sigma S \frac{\partial{f}}{\partial{S}} \right) dz = 0 $
-
- 
-\subsubsection{Creating the Grid}
-To solve for option prices at all time steps we need create a grid of stock prices (S, the stock price vector) and of M time steps until the option reaches maturity (T).
-Options have expiration dates or maturity. For example, an option expires in 12 days (T=12) and since our time steps is days ($k=T/M=1$) we have that M=12. If our time step was half a day (k=0.5) for the same expiry date in 12 days, the grid would have 24 time steps ($M = 12 \times 0.5$).
-Stock prices can be any non-negative real number. However the grid must start at 0 since the put option price is the strike price when the stock price is zero ($f_{0,m} = X$).
-
-A function (\texttt{createSandT}) was created to return two vectors for stock prices and times. 
-
-
-\subsection{Implementation issues}
-\subsection{Design Decisions}
-
-\section{Testing}
-
+\section{Introduction}
+\clearpage
+\section{Theory}
+\subsection {Business Application}
+\subsection {Black-Scholes(-Merton)}
+\subsection {Iterative algorithms / SOR}
+\clearpage
+\section{Code Base}
+\subsection {Version Control}
+{Put in something about using GIT, make us look really smart}
+\subsection {Structure / Packages}
+{Brief overview of the code base, hows its structured. Can refer to the below.}\\\\
+\dirtree{%
+.1 Sparse-SOR.
+.2 Report.
+.3 Latex files...
+.3 Report.pdf.
+.2 core.
+.3 doMath.py.
+.3 fileIO.py.
+.3 tridiagM.py.
+.2 docs.
+.3 input.in.
+.3 Background docs...
+.2 logs.
+.2 tests.
+.3 testMain.py.
+.2 main.py.
+.2 README.md.
+}
+\subsection {Run Time}
+{How do we run this at runtime? ie how can you modify the inputs / outputs etc}
+\subsection {Testing}
+{Why testings important, how we found it really useful all the way through the assignment (lol). Brief overview of what tests we have included, maybe some specific problem we meet and how testing helped us solve it?}
+\clearpage
+\section{Technical Challenges and Limitations}
+{What were the main technical challenges we faced doing this. What are the limitations of our brilliant solution }
+\clearpage
+\section{Results}
+{Our fantastic results}
+\clearpage
+\section{Conclusions}
 \clearpage
 \section*{Appendix}
-
-\begin{figure}[h!]
-\center
-\includegraphics[scale=0.8]{vary1212.png}
-\caption{Distribution of put option prices against stock prices for m $T=12$, $M=12$, $k=1$}
-\end{figure}
-
-\begin{figure}[h!]
-\center
-\includegraphics[scale=0.8]{vary1240.png}
-\caption{Distribution of put option prices against stock prices for m $T=12$, $M=40$, $k=0.3$}
-\end{figure}
-
-\begin{figure}[h!]
-\center
-\includegraphics[scale=0.8]{vary12365.png}
-\caption{Distribution of put option prices against stock prices for m $T=12$, $M=365$, $k=0.033$}
-\end{figure}
-
-
-\begin{figure}[h!]
-\center
-\includegraphics[scale=0.8]{3d_k_12_12.png}
-\caption{3D Plot of European Put Option Prices for $T=12$, $M=12$, $k=1$}
-\end{figure}
-
-\begin{figure}[h!]
-\center
-\includegraphics[scale=0.8]{3d_k_12_40.png}
-\caption{3D Plot of European Put Option Prices for $T=12$, $M=40$, $k=0.3$}
-\end{figure}
-
-\begin{figure}[h!]
-\center
-\includegraphics[scale=0.8]{3d_k_12_365.png}
-\caption{3D Plot of European Put Option Prices for $T=12$, $M=365$, $k=0.033$}
-\end{figure}
-
+{Any figures we want to show}
 \clearpage
 \begin{thebibliography}{9}
 \bibitem{someitem} 

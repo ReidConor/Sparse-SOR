@@ -3,6 +3,8 @@ import numpy as np
 from scipy.sparse import csc_matrix
 from matplotlib import pylab as plt
 import sys
+# from core.tridiagM import *
+from core.visualize import *
 ''' 
 Checking if zeros on the Diagonal
 '''
@@ -10,6 +12,7 @@ Checking if zeros on the Diagonal
 
 def hasZerosOnMainDiag (A):
     return np.in1d(0, np.diagonal(A))
+
  
 '''
 Checking if matrix is strictly diagonally dominant
@@ -18,7 +21,7 @@ def isStrictlyDiagDom(A):
     rowcol = np.shape(A)[1]
     i = 0
     j = 0
-    sumrow = 0 
+    sumrow = 0
     count = 0
     for i in range(rowcol):
         sumrow = 0
@@ -28,7 +31,7 @@ def isStrictlyDiagDom(A):
                 # print(sumrow)
         if abs(A[i, i]) > sumrow:
             count += 1
-    return count > 0
+    return count == 0
 
 
 def isStrictlyDiagonallyDominant(A):
@@ -70,40 +73,91 @@ omega must be > 1 to be the successive over-relaxation method.
 '''
 
 
-def Sparse_SOR(A, b, n, maxits, omega, x, error):
+# def Sparse_SOR(A, b, n, maxits, omega, x, error):
+#     k = 0
+#     while k < maxits:
+#         # omega_prev_prev = omega + 0.1
+#         # omega_prev = omega + 0.05
+#         rows = b.shape[0]
+#         D = A.diagonal()
+#         err = 10000
+#         xnorm = 0
+#         xnorm1 = 100
+#         while abs(err) > error:
+#             s = np.zeros(b.shape[0])
+#             for row in range(rows):
+#                 y = x[row]
+#                 cols = A.indices[A.indptr[row]:A.indptr[row + 1]]
+#                 for j, col in enumerate(cols):
+#                     if col != row:
+#                         s[row] += A.data[A.indptr[row]:A.indptr[row + 1]][j] * x[col]
+#
+#                 if D[row] != 0.0:
+#                     x[row] += omega * ((b[row] - s[row]) / D[row] - x[row])
+#
+#                 xnorm1 = xnorm
+#                 xnorm = np.linalg.norm(y - x, ord=rows)
+#                 err = xnorm
+#                 k += 1
+#                 if abs(xnorm) > abs(xnorm1):
+#                     print('divergence')
+#                     break
+#         break
+#
+#     resultsDict = {}
+#     resultsDict["x"] = x
+#     resultsDict["iterations"] = k
+#     resultsDict["finalError"] = err
+#     return x
+
+
+def Sparse_SOR(A,b,n,maxits,omega,x, error):
+    n = A.get_shape()[1]
     k = 0
-    while k < maxits:
-        # omega_prev_prev = omega + 0.1
-        # omega_prev = omega + 0.05
-        rows = b.shape[0]
-        D = A.diagonal()
-        err = 10000
-        xnorm = 0
-        xnorm1 = 100
-        while abs(err) > error:
-            s = np.zeros(b.shape[0])
-            for row in range(rows):
-                cols = A.indices[A.indptr[row]:A.indptr[row + 1]]
-                for j, col in enumerate(cols):
-                    if col != row:
-                        s[row] += A.data[A.indptr[row]:A.indptr[row + 1]][j] * x[col]
+    diff = 5555555.0
+    xnorm=0
+    x0 = x
+    diffnorm = 0
+    while k <= maxits and diff > error:
+        diffnorm0 = diffnorm
+        xnorm0 = xnorm
+        for i in range(0, n):
+            thesum = 0
+            for j in range(int(A.indptr[i]), int(A.indptr[i+1])):
+                thesum = thesum + A.data[j]*x[A.indices[j]]
+                if A.indices[j] == i:
+                    d = A.data[j]
+            # print(i, j)
 
-                if D[row] != 0.0:
-                    x[row] += omega * ((b[row] - s[row]) / D[row] - x[row])
-            xnorm = np.linalg.norm(x, ord=rows)
-            err = xnorm - xnorm1
-            xnorm1 = xnorm
-            k += 1
-            if abs(xnorm) > abs(xnorm1):
+            x[i] = x[i] + omega *(b[i]-thesum)/d
+            diffnorm = np.linalg.norm(x - x0, ord=n)
+
+        # print(diffnorm)
+        # print(diffnorm0)
+        xnorm = np.linalg.norm(x, ord=2)
+        diff = abs(xnorm - xnorm0)
+        if abs(diffnorm) > abs(diffnorm0):
                 print('divergence')
+                stoppingReason = "x Sequence divergence"
                 break
-        break
-
+        k += 1
     resultsDict = {}
     resultsDict["x"] = x
     resultsDict["iterations"] = k
-    resultsDict["finalError"] = err
-    return x
+    resultsDict["diffnorm"] = diffnorm
+    resultsDict["diffnorm0"] = diffnorm0
+
+    if k == maxits:
+        stoppingReason = "Max Iterations reached"
+    else:
+        stoppingReason = "x Sequence convergence"
+    resultsDict["stoppingReason"] = stoppingReason
+
+    return resultsDict
+
+
+
+
 
 
 '''

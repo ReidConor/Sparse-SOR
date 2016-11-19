@@ -8,7 +8,6 @@ Created on Wed Nov 16 20:02:05 2016
 import numpy as np
 from numpy import *
 
-
 # print(np.linalg.eigvals(A))
 
 def CreateC(A):

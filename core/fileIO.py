@@ -25,8 +25,8 @@ def readFileIntoDict(inputFile):
 def readFileMtx(inputFile):
     myDict = {}
     # A = sparse.csr_matrix(np.loadtxt(inputFile))
-    print (inputFile)
-    m = mmread('/Users/Conor/Google Drive/MSc/NMS_1/Prog_Assignment2/Sparse-SOR/docs/plat1919.mtx')
+    # m = mmread('/Users/Conor/Google Drive/MSc/NMS_1/Prog_Assignment2/Sparse-SOR/docs/plat1919.mtx')
+    m = mmread(inputFile)
     m = m.asformat("csr")
 
     dim = m.shape[1]
