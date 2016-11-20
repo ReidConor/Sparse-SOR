@@ -2,28 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd13d333-d0d9-4d01-babd-0b64d78afbdc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/outfile.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Report/report.out" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tests/testMain.py" afterPath="$PROJECT_DIR$/tests/unitTests.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/3d_12_375.png" afterPath="$PROJECT_DIR$/Report/3d_12_375.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/3d_k_12_12.png" afterPath="$PROJECT_DIR$/Report/3d_k_12_12.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/3d_k_12_365.png" afterPath="$PROJECT_DIR$/Report/3d_k_12_365.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/3d_k_12_40.png" afterPath="$PROJECT_DIR$/Report/3d_k_12_40.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak/images/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak/report.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak/report.bbl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak/report.blg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak/report.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak/report.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak/report.synctex.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak/report.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak/report.toc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak2/3d_12_375.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak2/3d_k_12_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak2/3d_k_12_365.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak2/3d_k_12_40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak2/images/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak2/report.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak2/report.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak2/report.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak2/report.synctex.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak2/report.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak2/report.toc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak2/vary1212.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak2/vary12365.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak2/vary1240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/3d_12_375.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/3d_k_12_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/3d_k_12_365.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/3d_k_12_40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/images/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/report.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/report.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/report.out" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/report.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/report.synctex.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/report.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/report.toc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/vary1212.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/vary12365.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.bak3/vary1240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/doLogs.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/Matrix1.in" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.pdf" afterPath="$PROJECT_DIR$/Report/report.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.synctex.gz" afterPath="$PROJECT_DIR$/Report/report.synctex.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/vary1212.png" afterPath="$PROJECT_DIR$/Report/vary1212.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/vary12365.png" afterPath="$PROJECT_DIR$/Report/vary12365.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/vary1240.png" afterPath="$PROJECT_DIR$/Report/vary1240.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/A(.in).png" afterPath="$PROJECT_DIR$/docs/A(.in).png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.aux" afterPath="$PROJECT_DIR$/Report/report.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.log" afterPath="$PROJECT_DIR$/Report/report.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.tex" afterPath="$PROJECT_DIR$/Report/report.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.toc" afterPath="$PROJECT_DIR$/Report/report.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/nas_SOR.out" afterPath="$PROJECT_DIR$/logs/nas_SOR.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TestingC.py" afterPath="$PROJECT_DIR$/tests/TestingC.py" />
     </list>
     <ignored path="Prog-Assignment2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,9 +72,11 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-              <folding />
+            <state relative-caret-position="195">
+              <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,16 +121,16 @@
         <option value="$PROJECT_DIR$/tests/outfile.txt" />
         <option value="$PROJECT_DIR$/tests/TestingC.py" />
         <option value="$PROJECT_DIR$/tests/testMain.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/logs/nas_SOR.out" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1567" />
-    <option name="y" value="-21" />
-    <option name="width" value="1306" />
-    <option name="height" value="1029" />
+    <option name="x" value="-1656" />
+    <option name="y" value="-26" />
+    <option name="width" value="1340" />
+    <option name="height" value="1022" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -145,6 +173,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Sparse-SOR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sparse-SOR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sparse-SOR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -421,15 +463,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1567" y="-21" width="1306" height="1029" extended-state="0" />
+    <frame x="-1656" y="-26" width="1340" height="1022" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22894333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22313432" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45416668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45416668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -439,7 +482,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32579187" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -466,7 +508,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1#19#0" expanded="true" />
+            <element signature="e#1#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -476,7 +518,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="27" column="59" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
-          <folding />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -492,7 +536,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1#19#0" expanded="true" />
+            <element signature="e#1#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -502,7 +546,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -518,7 +564,7 @@
         <state relative-caret-position="105">
           <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
           <folding>
-            <element signature="e#1#19#0" expanded="true" />
+            <element signature="e#1#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -580,13 +626,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/random.png" />
-    <entry file="file://$PROJECT_DIR$/core/doLogs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="76" selection-start-line="9" selection-start-column="76" selection-end-line="9" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///anaconda/lib/python3.5/site-packages/matplotlib/backend_bases.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -612,7 +651,7 @@
         <state relative-caret-position="-1127">
           <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -677,7 +716,7 @@
         <state relative-caret-position="36">
           <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
           <folding>
-            <element signature="e#1#19#0" expanded="true" />
+            <element signature="e#1#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -687,26 +726,32 @@
         <state relative-caret-position="315">
           <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/doLogs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="76" selection-start-line="9" selection-start-column="76" selection-end-line="9" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/nas_SOR.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/outfile.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1515">
+        <state relative-caret-position="895">
           <caret line="101" column="291" selection-start-line="101" selection-start-column="291" selection-end-line="101" selection-end-column="291" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/TestingC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-          <folding>
-            <element signature="e#86#104#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -718,19 +763,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/nas_SOR.out">
+    <entry file="file://$PROJECT_DIR$/tests/TestingC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="82" selection-start-line="1" selection-start-column="82" selection-end-line="1" selection-end-column="82" />
-          <folding />
+        <state relative-caret-position="2760">
+          <caret line="184" column="22" selection-start-line="184" selection-start-column="22" selection-end-line="184" selection-end-column="22" />
+          <folding>
+            <element signature="e#86#104#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
+        <state relative-caret-position="195">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

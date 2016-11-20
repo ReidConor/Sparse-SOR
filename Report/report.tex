@@ -85,9 +85,9 @@
 \begin{minipage}{0.4\textwidth}
 \begin{flushleft} \large
 \emph{Authors:}\\
-\small{Eoghan \textsc{Aherne}}\\
-\small{Louis \textsc{Carnec}}\\
-\small{Conor \textsc{Reid}} %(16202630 - MSc B.A Part-time)}\\ % Your name
+\small{Eoghan \textsc{Aherne} (??? - MSc B.A Part-time) }\\
+\small{Louis \textsc{Carnec} (??? - MSc B.A Part-time)}\\
+\small{Conor \textsc{Reid} (16202630 - MSc B.A Part-time)}\\
 \end{flushleft}
 \end{minipage}
 ~
@@ -139,7 +139,18 @@ effect of an ill-conditioned matrix?\\
 Successive over-relaxation methods were preceded by the Gauss-Seidel algorithm developed in the 19\textsuperscript{th} century which enabled him to solve singular linear systems with equal numbers of unknowns and equations. Over-relaxation techniques later evolved with the work of David Young, these would enable systems of over 20,000 unknowns to be solved by 1965 \cite{saad2000iterative}. Such methods were initially used for systems with elliptic partial differential equations discretised with finite difference techniques (or multi-grid methods). 
 
 A range of applications could benefit from the lower computational cost and memory requirements of these iterative methods. Specifically the SOR iterative method is beneficial in circuit analysis, quantitative finance and weather forecasting.
-
+\subsection {SOR}
+{The first part of our solution  deals with simply applying the successive over-relaxation (SOR) algorithm to a system of linear equations in the form $\textbf{A}\textbf{x} = \textbf{b}$. This is in an effort to solve for $x_{1\times n}$ given $A_{n\times n}$ and $b_{1\times n}$. One approach to solving this type of problem is to decompose A into its diagonal component ({\it D}), and upper and lower triangular components ({\it L} and {\it U}). This yields an expression on which the SOR, an iterative technique, can work and eventually solve. It should be noted that SOR is a modification of the Gauss-Seidel method, increasing the reaction factor from $\omega = 1$ to $\omega > 1$. The purpose of the relaxation factor is to modify the spectral radius (the largest eiganvalue) of the resulting matrix and thus cause convergence more quickly. In theory by increasing this factor, convergence should be positively affected. \\\\
+It has been shown that the optimal value of $\omega$ can be expressed as
+\begin {equation}
+\omega^* = \frac{2}{1 + \sqrt{1 - r_\theta}(C)}
+\end {equation}
+where $C = -(D + L)^{-1}U$ (D, L and U as above). However, in general the finding of this optimal relaxation factor is more challenging and computational expensive than the system of linear equations that are to be solved. For this reason, $\omega$ in the range $1 \leq \omega^* \leq 2$ is chosen.\\\\
+Taking into account the triangular nature of D, L and U $x^{k+1}$ (that is, x at the $k+1$ iteration of x) can be expressed as
+\begin{equation}
+x_{i}^{(k+1)} = (1 - \omega)x_{i}^{(k)} + \frac {\omega}{a_{ii}}\bigg( b_i - \sum\limits_{j<i} a_{ij} x_j^{k+1} - \sum\limits_{j>i} a_{ij}  x_j^{k} \bigg) , i = 1,2,......n
+\end{equation}
+Using the equation above it is possible through iteration to approximate the solution of $\textbf{A}\textbf{x} = \textbf{b}$.}
 \subsection {Black-Scholes(-Merton)}
 
 The Black-Scholes model provides a way to calculate option prices from stock prices. The Black-Scholes(-Merton) equation, based on the It\^{o} process ($dS = \mu S dt+ S$)
@@ -185,55 +196,55 @@ The issue with this last function is that the Sparse SOR function is ran T times
 
 \subsection {Iterative algorithms / SOR}
 \clearpage
-\section{Design/Code Base}
-
-\subsection{4.0}
-{The first part of our solution  deals wth simply applying the successive successive over-relaxation (SOR) algorithm to a system of linear equations in the form $\textbf{A}\textbf{x} = \textbf{b}$ to solve for $x_{1\times n}$ given $A_{n\times n}$ and $b_{1\times n}$. One approach to solving this type of problem is to decompose A into its diagonal component ({\it D}), and upper and lower triangular components ({\it L} and {\it U}). This yields an expression on which the SOR, an iterative technique, can work and solve. Taking into account the triangular nature of D and L, $x^{k=1}$ (that is, x at the $k+1$ iteration of x) can be expressed as
-\begin{equation}
-x_{i}^{(k+1)} = (1 - \omega)x_{i}^{(k)} + \frac {\omega}{a_{ii}}\bigg( b_i - \sum\limits_{j<i} a_{ij} x_j^{k+1} - \sum\limits_{j>i} a_{ij}  x_j^{k} \bigg) , i = 1,2,......n
-\end{equation}
-Using the equation above it is possible through iteration to approximate the solution of $\textbf{A}\textbf{x} = \textbf{b}$.\\\\
-An important design decision that was made here was to use compressed row storage (csr) for the input matrices. This is chosen as the optimal storage method, due to the nature of the input matrices having a small amount of non-zero entries. In traditional storage methods, each value in the matrix would be stored 
-\subsubsection{Components of the system}
-{There are a number of notable features of the solution given that are discussed here. The \texttt{main.py} module, from where the program as a whole is instigated and controlled, first handles file input and output. By default, an \texttt{input.in} file is read from. This file is stored in the {\bf docs/} folder, and contains the dimension of the input A, A itself and b all in plain text in array format. On read, these matrices are converted to compressed row storage (csr) for optimal storage and performance. A python dictionary is created containing these elements. Also by default, a \texttt{nas\_SOR.out} file is used for logging purposes, stored too in the {\bf docs} folder. \\\\
+\section{Code Base and Solution Design}
+\subsection{SOR}
+{There are a number of notable features of the solution given that are discussed here. 
+An important design decision that was made here was to use compressed row storage (csr) for the input matrices. This is chosen as the optimal storage method, due to the nature of the input matrices having a small amount of non-zero entries. In traditional storage methods, each value in the matrix would be stored in memory making for quick access times for any one specific value. This requires $\Theta(n^2)$ storage space, which can cause issues with particularly large matrices. In contrast, csr only stores the non-zero entries, along with the location of that entity. While accessing the value of a given matrix coordinate is not as easy as with the traditional method, the storage required is $O(2t + n)$. This is significantly less, and thus clearly an optimal design choice.       \\\\
+The \texttt{main.py} module, from where the program as a whole is instigated and controlled, first handles file input and output. By default, an \texttt{input.in} file is read from. This file is stored in the {\bf docs/} folder, and contains the dimension of the input A, A itself and b all in plain text in array format. On read, these matrices are converted to compressed row storage (csr) for optimal storage and performance. A python dictionary is created containing these elements. Also by default, a \texttt{nas\_SOR.out} file is used for logging purposes, stored too in the {\bf docs} folder. \\\\
 It is possible however, to change these defaults and input another file stored locally elsewhere. This is achieved by specifying the path to this file as the first argument to the \texttt{main.py} module. Note, that both files with the '.in' and '.mtx' are acceptable input to the program. It is expected that the former be in the same format as that of the default input. However, '.mtx' files can contain a matrix already in csr format. This facilitates the use of matrices sourced from \url{http://math.nist.gov/MatrixMarket/}. In addition, it is possible to provide a second argument to the \texttt{main.py} module specifying the location of the new log file. This will have no effect on the contents of the logs, only the location where they are saved. \\\\
 Once the input and output files have been handled, a number of checks are carried out on the input matrices. Firstly, a check is made for any zeros on the main diagonal of the {\bf A} matrix. From equation (1), it is clear that a divide-by-zero would occur should there be any zeros on the main diagonal of A, in the $\frac{\omega}{a_{ii}}$ term. \\\\
 Next, a check is made for diagonal dominance of the {\bf A} matrix. A condition for the convergence on a solution of {\bf x} is that that matrix have a $r_\sigma (C) < 1$ for 
 \begin{equation}
 C = -(D + L)^{-1}U
 \end{equation}
-where D, L and U are as described earlier. Having said this, it is appropriate to check for row or column diagonal dominance, and thus sufficiently meet the above criteria. There are two separate methods in the \texttt{doMath.py} module to achieve this, using differing methodologies. The \texttt{isStrictlyDiagDom} method uses {\it for} loops, and returns the count of instances where diagonal dominance is violated. The \texttt{isStrictlyDiagonallyDominant} method on the other hand, takes advantage of the ability in {\it numpy} to find the sum of a matrix along each axis. The value on the diagonal is then removed from this sum, and checked against the new sum to check for dominance of that diagonal value.   
-
-
-    }
-
-}
+where D, L and U are as described earlier. Having said this, it is appropriate to check for row or column diagonal dominance, and thus sufficiently meet the above criteria. There are two separate methods in the \texttt{doMath.py} module to achieve this, using differing methodologies. The \texttt{isStrictlyDiagDom} method uses {\it for} loops, and returns the count of instances where diagonal dominance is violated. The \texttt{isStrictlyDiagonallyDominant} method on the other hand, takes advantage of the ability in {\it numpy} to find the sum of a matrix along each axis. The value on the diagonal is then removed from this sum, and checked against the new sum to check for dominance of that diagonal value. }
+\subsection{Black-Scholes(-Merton)}
 
 
 \subsection {Version Control}
-{Put in something about using GIT, make us look really smart}
-\subsection {Structure / Packages}
-{Brief overview of the code base, hows its structured. Can refer to the below.}\\\\
+{It was decided to make use of source control, specifically GitHub, to manage the collaboration and multi-developer aspect of this project. The public repository for the current solution is available at the following url \url{https://github.com/ReidConor/Sparse-SOR/tree/master/}. This contains just just the code used to achieve the solution outlined here, but also the source code for this paper as well as the test matrices and resulting logs used throughout. In addition, this repository provides posterity and a way to retrieve the source code in addition to the files provided in the submission of this paper.}
+\subsection {Project Structure}
+{Here, a brief discussion of the source code structure is included for reference. Spare-SOR is the name of the project, with the \texttt{main.py} module directly underneath. This ensures ease of running, as well as better handling dependancies throughout the project.  }\\
 \dirtree{%
 .1 Sparse-SOR.
 .2 Report.
-.3 Latex files...
+.3 (latex files)...
 .3 Report.pdf.
 .2 core.
 .3 doMath.py.
 .3 fileIO.py.
 .3 tridiagM.py.
+.3 visualize.py.
 .2 docs.
-.3 input.in.
-.3 Background docs...
+.3 Various .in files...
+.3 Various .mtx files...
+.3 Plots if generated...
 .2 logs.
+.3 BSM\_logs.out.
+.3 nas\_SOR.out.
+.3 Any other .out generated by providing an argument at runtime. 
 .2 tests.
-.3 testMain.py.
+.3 outfile.txt.
+.3 TestingC.py.
+.3 tests.doc.
+.3 unitTests.py.
 .2 main.py.
 .2 README.md.
 }
+\vspace{0.5cm}
+{The {\it 'Report'} folder obviously contains this paper. The {\it core} folder contains much of the logic for SOR, as well as file input and output logic and methods for visualising results. The methods for solving the BSM equation is also found here. The {\it docs} folder contains the input matrices that were tested, and also provides a location to write plots out to if necessary. The {\it logs} folder obviously contains output files describing what happened in the latest run, and {\it tests} contains both unit testing and also methods used in the construction and running of tests for the SOR algorithm itself.}   
 \subsection {Run Time}
-{How do we run this at runtime? ie how can you modify the inputs / outputs etc}
+{As mentioned previously, the \texttt{main.py} module controls the flow of the program, calling methods on the adjacent packages. Thus, it is this module that is run to invoke the functionality of the solution. Firstly, it is possible to run this module with no arguments. This will run the SOR algorithm against a default {\it '.in'} file containing a simple $5 \times 5$ matrix A and output the solution to the default logging location, a file called {\it nas\_SOR.out} in the \texttt {docs} folder.\\\\ Secondly, one can provide an argument when running the module. This would be the path to another data input file to solve using the SOR algorithm. Note, that this file can be in one of two forms; plain text or compress row storage. The former should be held in a {\it '.in'} file, the latter a {\it '.mtx'} file. This aids the program in deciding how best to treat the input, while allowing a diverse set of allowable input data. Passing a data file with a different file extension will cause the program to fail, and output 'input file error' in the logs.\\\\Thirdly, it is possible to pass a second parameter to the \texttt{main.py} module, which specifies a location in which to save the log file. This log file has been mentioned earlier, and simply provides a way to see what happened in the latest run of Sparse-SOR. Note, it is only possible to provide this alternative location if a path to the input file is also specified.    }
 \subsection {Testing}
 {Why testings important, how we found it really useful all the way through the assignment (lol). Brief overview of what tests we have included, maybe some specific problem we meet and how testing helped us solve it?}
 \clearpage
@@ -303,12 +314,7 @@ The number of grid points and thus the shape of the matrix depend on the values 
 \clearpage
 \bibliographystyle{acm}
 \bibliography{numassignmentrefs}
-
-\begin{thebibliography}{9}
-\bibitem{someitem} 
-Some Reference
  
-\end{thebibliography}
 
 
 \end{document}

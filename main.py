@@ -4,7 +4,6 @@ from core.tridiagM import *
 from core.visualize import *
 import logging
 import os
-from core.doLogs import *
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
