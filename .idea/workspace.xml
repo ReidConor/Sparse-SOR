@@ -2,19 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd13d333-d0d9-4d01-babd-0b64d78afbdc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/outfile.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Report/report.out" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tests/testMain.py" afterPath="$PROJECT_DIR$/tests/unitTests.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/3d_12_375.png" afterPath="$PROJECT_DIR$/Report/3d_12_375.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/3d_k_12_12.png" afterPath="$PROJECT_DIR$/Report/3d_k_12_12.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/3d_k_12_365.png" afterPath="$PROJECT_DIR$/Report/3d_k_12_365.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/3d_k_12_40.png" afterPath="$PROJECT_DIR$/Report/3d_k_12_40.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.pdf" afterPath="$PROJECT_DIR$/Report/report.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.synctex.gz" afterPath="$PROJECT_DIR$/Report/report.synctex.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/nas_SOR.out" afterPath="$PROJECT_DIR$/logs/nas_SOR.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/vary1212.png" afterPath="$PROJECT_DIR$/Report/vary1212.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/vary12365.png" afterPath="$PROJECT_DIR$/Report/vary12365.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/vary1240.png" afterPath="$PROJECT_DIR$/Report/vary1240.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/A(.in).png" afterPath="$PROJECT_DIR$/docs/A(.in).png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.aux" afterPath="$PROJECT_DIR$/Report/report.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.log" afterPath="$PROJECT_DIR$/Report/report.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.tex" afterPath="$PROJECT_DIR$/Report/report.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Report/report.toc" afterPath="$PROJECT_DIR$/Report/report.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/doMath.py" afterPath="$PROJECT_DIR$/core/doMath.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/fileIO.py" afterPath="$PROJECT_DIR$/core/fileIO.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/tridiagM.py" afterPath="$PROJECT_DIR$/core/tridiagM.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/BSM_logs.out" afterPath="$PROJECT_DIR$/logs/BSM_logs.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/nas_SOR.out" afterPath="$PROJECT_DIR$/logs/nas_SOR.out" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/TestingC.py" afterPath="$PROJECT_DIR$/tests/TestingC.py" />
     </list>
     <ignored path="Prog-Assignment2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,32 +46,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fileIO.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/fileIO.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nas_SOR.out" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logs/nas_SOR.out">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+            <state relative-caret-position="90">
+              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -89,7 +74,6 @@
         <option value="$PROJECT_DIR$/core/math.py" />
         <option value="$PROJECT_DIR$/core/input.txt" />
         <option value="$PROJECT_DIR$/core/input.in" />
-        <option value="$PROJECT_DIR$/tests/testMain.py" />
         <option value="$PROJECT_DIR$/_init_.py" />
         <option value="$PROJECT_DIR$/core/main.py" />
         <option value="$PROJECT_DIR$/docs/another_input.in" />
@@ -99,22 +83,24 @@
         <option value="$PROJECT_DIR$/logs/logs.out" />
         <option value="$PROJECT_DIR$/tests/Testing_C.py" />
         <option value="$PROJECT_DIR$/tests/hdhhd.py" />
-        <option value="$PROJECT_DIR$/tests/TestingC.py" />
         <option value="$PROJECT_DIR$/core/doLogs.py" />
         <option value="$PROJECT_DIR$/docs/input.in" />
         <option value="$PROJECT_DIR$/core/visualize.py" />
         <option value="$PROJECT_DIR$/core/tridiagM.py" />
         <option value="$PROJECT_DIR$/docs/bcsstk16.mtx" />
         <option value="$PROJECT_DIR$/core/doMath.py" />
-        <option value="$PROJECT_DIR$/logs/nas_SOR.out" />
         <option value="$PROJECT_DIR$/core/fileIO.py" />
+        <option value="$PROJECT_DIR$/tests/outfile.txt" />
+        <option value="$PROJECT_DIR$/tests/TestingC.py" />
+        <option value="$PROJECT_DIR$/tests/testMain.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/logs/nas_SOR.out" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="529" />
-    <option name="y" value="29" />
+    <option name="x" value="-1567" />
+    <option name="y" value="-21" />
     <option name="width" value="1306" />
     <option name="height" value="1029" />
   </component>
@@ -159,34 +145,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Sparse-SOR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sparse-SOR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sparse-SOR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sparse-SOR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sparse-SOR" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="logs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -242,7 +200,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Prog-Assignment2" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/testMain.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/unitTests.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -442,9 +400,9 @@
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.tridiagM" />
-        <item index="2" class="java.lang.String" itemvalue="Python.visualize" />
-        <item index="3" class="java.lang.String" itemvalue="Python.TestingC" />
+        <item index="1" class="java.lang.String" itemvalue="Python.TestingC" />
+        <item index="2" class="java.lang.String" itemvalue="Python.tridiagM" />
+        <item index="3" class="java.lang.String" itemvalue="Python.visualize" />
         <item index="4" class="java.lang.String" itemvalue="Python.testMain" />
       </list>
     </recent_temporary>
@@ -463,7 +421,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="529" y="29" width="1306" height="1029" extended-state="0" />
+    <frame x="-1567" y="-21" width="1306" height="1029" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22894333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -471,7 +429,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37083334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45416668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -503,23 +461,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="64" selection-start-line="10" selection-start-column="64" selection-end-line="10" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/fileIO.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/doMath.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -535,9 +476,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="27" column="59" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -563,9 +502,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -624,6 +561,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <element signature="e#86#104#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -647,23 +587,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/TestingC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///anaconda/lib/python3.5/site-packages/matplotlib/backend_bases.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="2074" column="50" selection-start-line="2074" selection-start-column="50" selection-end-line="2074" selection-end-column="50" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/A(.in).png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logs/BSM_plot.png">
@@ -699,14 +627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/input.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/plat1919.mtx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -723,16 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/doMath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="148" column="52" selection-start-line="148" selection-start-column="52" selection-end-line="148" selection-end-column="52" />
-          <folding>
-            <element signature="e#1#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/untitled.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -741,25 +651,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/testMain.py">
+    <entry file="file://$PROJECT_DIR$/docs/bcsstk18.mtx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        <state relative-caret-position="135">
+          <caret line="75" column="26" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logs/nas_SOR.out">
+    <entry file="file://$PROJECT_DIR$/docs/input.in">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+        <state relative-caret-position="45">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/A(.in).png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/doMath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding>
+            <element signature="e#1#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/fileIO.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
+        <state relative-caret-position="315">
           <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -767,13 +692,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/outfile.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1515">
+          <caret line="101" column="291" selection-start-line="101" selection-start-column="291" selection-end-line="101" selection-end-column="291" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/TestingC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding>
+            <element signature="e#86#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unitTests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/nas_SOR.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="82" selection-start-line="1" selection-start-column="82" selection-end-line="1" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -18,18 +18,18 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[paper=a4, fontsize=10pt]{scrartcl} % A4 paper and 10pt font size
+\documentclass[paper=a4, fontsize=10pt]{article} % A4 paper and 10pt font size
 
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 %\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
 \usepackage[english]{babel} % English language/hyphenation
 \usepackage{amsmath,amsfonts,amsthm} % Math packages
-\usepackage{lscape}
+
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 \usepackage{courier}
-\usepackage{url}
 \usepackage{sectsty} % Allows customizing section commands
 \setlength{\columnsep}{5mm}
+\usepackage{hyperref}
 
 \usepackage{geometry}
  \geometry{
@@ -43,8 +43,6 @@
 \graphicspath{ {images/} }
 
 \usepackage{indentfirst}
-\usepackage{dirtree}
-
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
 
@@ -120,11 +118,15 @@
 \tableofcontents
 \clearpage
 \onecolumn
-\section{Introduction}
-\clearpage
-\section{Theory}
 
-\subsection{Overview}
+\section{Overview}
+
+\subsection{Mathematical Issues}
+
+\subsubsection{4.0}
+\subsubsection{4.1}
+
+\subsection{Applications}
 
 \subsection{Questions}
 useful to check for convergence of the residual to zero?\\
@@ -134,15 +136,31 @@ which matrices do you get expect convergence and which do not? why?\\
 effect of different values of tolerance?\\
 effect of an ill-conditioned matrix?\\
 
-\subsection {Business Applications}
+\section{Design}
 
-Successive over-relaxation methods were preceded by the Gauss-Seidel algorithm developed in the 19\textsuperscript{th} century which enabled him to solve singular linear systems with equal numbers of unknowns and equations. Over-relaxation techniques later evolved with the work of David Young, these would enable systems of over 20,000 unknowns to be solved by 1965 \cite{saad2000iterative}. Such methods were initially used for systems with elliptic partial differential equations discretised with finite difference techniques (or multi-grid methods). 
+\subsection{4.0}
+{The first part of our solution  deals wth simply applying the successive successive over-relaxation (SOR) algorithm to a system of linear equations in the form $\textbf{A}\textbf{x} = \textbf{b}$ to solve for $x_{1\times n}$ given $A_{n\times n}$ and $b_{1\times n}$. One approach to solving this type of problem is to decompose A into its diagonal component ({\it D}), and upper and lower triangular components ({\it L} and {\it U}). This yields an expression on which the SOR, an iterative technique, can work and solve. Taking into account the triangular nature of D and L, $x^{k=1}$ (that is, x at the $k+1$ iteration of x) can be expressed as
+\begin{equation}
+x_{i}^{(k+1)} = (1 - \omega)x_{i}^{(k)} + \frac {\omega}{a_{ii}}\bigg( b_i - \sum\limits_{j<i} a_{ij} x_j^{k+1} - \sum\limits_{j>i} a_{ij}  x_j^{k} \bigg) , i = 1,2,......n
+\end{equation}
+Using the equation above it is possible through iteration to approximate the solution of $\textbf{A}\textbf{x} = \textbf{b}$.\\\\
+An important design decision that was made here was to use compressed row storage (csr) for the input matrices. This is chosen as the optimal storage method, due to the nature of the input matrices having a small amount of non-zero entries. In traditional storage methods, each value in the matrix would be stored 
+\subsubsection{Components of the system}
+{There are a number of notable features of the solution given that are discussed here. The \texttt{main.py} module, from where the program as a whole is instigated and controlled, first handles file input and output. By default, an \texttt{input.in} file is read from. This file is stored in the {\bf docs/} folder, and contains the dimension of the input A, A itself and b all in plain text in array format. On read, these matrices are converted to compressed row storage (csr) for optimal storage and performance. A python dictionary is created containing these elements. Also by default, a \texttt{nas\_SOR.out} file is used for logging purposes, stored too in the {\bf docs} folder. \\\\
+It is possible however, to change these defaults and input another file stored locally elsewhere. This is achieved by specifying the path to this file as the first argument to the \texttt{main.py} module. Note, that both files with the '.in' and '.mtx' are acceptable input to the program. It is expected that the former be in the same format as that of the default input. However, '.mtx' files can contain a matrix already in csr format. This facilitates the use of matrices sourced from \url{http://math.nist.gov/MatrixMarket/}. In addition, it is possible to provide a second argument to the \texttt{main.py} module specifying the location of the new log file. This will have no effect on the contents of the logs, only the location where they are saved. \\\\
+Once the input and output files have been handled, a number of checks are carried out on the input matrices. Firstly, a check is made for any zeros on the main diagonal of the {\bf A} matrix. From equation (1), it is clear that a divide-by-zero would occur should there be any zeros on the main diagonal of A, in the $\frac{\omega}{a_{ii}}$ term. \\\\
+Next, a check is made for diagonal dominance of the {\bf A} matrix. A condition for the convergence on a solution of {\bf x} is that that matrix have a $r_\sigma (C) < 1$ for 
+\begin{equation}
+C = -(D + L)^{-1}U
+\end{equation}
+where D, L and U are as described earlier. Having said this, it is appropriate to check for row or column diagonal dominance, and thus sufficiently meet the above criteria. There are two separate methods in the \texttt{doMath.py} module to achieve this, using differing methodologies. The \texttt{isStrictlyDiagDom} method uses {\it for} loops, and returns the count of instances where diagonal dominance is violated. The \texttt{isStrictlyDiagonallyDominant} method on the other hand, takes advantage of the ability in {\it numpy} to find the sum of a matrix along each axis. The value on the diagonal is then removed from this sum, and checked against the new sum to check for dominance of that diagonal value.   
 
-A range of applications could benefit from the lower computational cost and memory requirements of these iterative methods. Specifically the SOR iterative method is beneficial in circuit analysis, quantitative finance and weather forecasting.
 
-\subsection {Black-Scholes(-Merton)}
+    }
 
-The Black-Scholes model provides a way to calculate option prices from stock prices. The Black-Scholes(-Merton) equation, based on the It\^{o} process ($dS = \mu S dt+ S$)
+}
+
+\subsection{4.1}
 
 The implementation of the Black-Scholes-Merton pricing problem found in the module \texttt{tridiagM.py} takes advantage of the fact that the Black-Scholes differential equation as a system of linear equations ($\textbf{A}\textbf{x} = \textbf{b}$) can be written as a tridiagonal $(N-1)\times(N-1)$ matrix. This tridiagonal matrix, $\textbf{A}$, which by definition is a sparse matrix, can be solved using the Sparse SOR algorithm
  which solves for vector $\textbf{x}$ the system of linear equations $\textbf{A}\textbf{x} = \textbf{b}$ by successive iteration. 
@@ -177,81 +195,20 @@ The issue with this last function is that the Sparse SOR function is ran T times
 
 
 
-\subsubsection{Finite Difference Method}
+\subsection{Implementation issues}
+\subsection{Design Decisions}
+
+\section{Testing and Results}
 
 
 
-
-
-\subsection {Iterative algorithms / SOR}
-\clearpage
-\section{Design/Code Base}
-
-\subsection{4.0}
-{The first part of our solution  deals wth simply applying the successive successive over-relaxation (SOR) algorithm to a system of linear equations in the form $\textbf{A}\textbf{x} = \textbf{b}$ to solve for $x_{1\times n}$ given $A_{n\times n}$ and $b_{1\times n}$. One approach to solving this type of problem is to decompose A into its diagonal component ({\it D}), and upper and lower triangular components ({\it L} and {\it U}). This yields an expression on which the SOR, an iterative technique, can work and solve. Taking into account the triangular nature of D and L, $x^{k=1}$ (that is, x at the $k+1$ iteration of x) can be expressed as
-\begin{equation}
-x_{i}^{(k+1)} = (1 - \omega)x_{i}^{(k)} + \frac {\omega}{a_{ii}}\bigg( b_i - \sum\limits_{j<i} a_{ij} x_j^{k+1} - \sum\limits_{j>i} a_{ij}  x_j^{k} \bigg) , i = 1,2,......n
-\end{equation}
-Using the equation above it is possible through iteration to approximate the solution of $\textbf{A}\textbf{x} = \textbf{b}$.\\\\
-An important design decision that was made here was to use compressed row storage (csr) for the input matrices. This is chosen as the optimal storage method, due to the nature of the input matrices having a small amount of non-zero entries. In traditional storage methods, each value in the matrix would be stored 
-\subsubsection{Components of the system}
-{There are a number of notable features of the solution given that are discussed here. The \texttt{main.py} module, from where the program as a whole is instigated and controlled, first handles file input and output. By default, an \texttt{input.in} file is read from. This file is stored in the {\bf docs/} folder, and contains the dimension of the input A, A itself and b all in plain text in array format. On read, these matrices are converted to compressed row storage (csr) for optimal storage and performance. A python dictionary is created containing these elements. Also by default, a \texttt{nas\_SOR.out} file is used for logging purposes, stored too in the {\bf docs} folder. \\\\
-It is possible however, to change these defaults and input another file stored locally elsewhere. This is achieved by specifying the path to this file as the first argument to the \texttt{main.py} module. Note, that both files with the '.in' and '.mtx' are acceptable input to the program. It is expected that the former be in the same format as that of the default input. However, '.mtx' files can contain a matrix already in csr format. This facilitates the use of matrices sourced from \url{http://math.nist.gov/MatrixMarket/}. In addition, it is possible to provide a second argument to the \texttt{main.py} module specifying the location of the new log file. This will have no effect on the contents of the logs, only the location where they are saved. \\\\
-Once the input and output files have been handled, a number of checks are carried out on the input matrices. Firstly, a check is made for any zeros on the main diagonal of the {\bf A} matrix. From equation (1), it is clear that a divide-by-zero would occur should there be any zeros on the main diagonal of A, in the $\frac{\omega}{a_{ii}}$ term. \\\\
-Next, a check is made for diagonal dominance of the {\bf A} matrix. A condition for the convergence on a solution of {\bf x} is that that matrix have a $r_\sigma (C) < 1$ for 
-\begin{equation}
-C = -(D + L)^{-1}U
-\end{equation}
-where D, L and U are as described earlier. Having said this, it is appropriate to check for row or column diagonal dominance, and thus sufficiently meet the above criteria. There are two separate methods in the \texttt{doMath.py} module to achieve this, using differing methodologies. The \texttt{isStrictlyDiagDom} method uses {\it for} loops, and returns the count of instances where diagonal dominance is violated. The \texttt{isStrictlyDiagonallyDominant} method on the other hand, takes advantage of the ability in {\it numpy} to find the sum of a matrix along each axis. The value on the diagonal is then removed from this sum, and checked against the new sum to check for dominance of that diagonal value.   
-
-
-    }
-
-}
-
-
-\subsection {Version Control}
-{Put in something about using GIT, make us look really smart}
-\subsection {Structure / Packages}
-{Brief overview of the code base, hows its structured. Can refer to the below.}\\\\
-\dirtree{%
-.1 Sparse-SOR.
-.2 Report.
-.3 Latex files...
-.3 Report.pdf.
-.2 core.
-.3 doMath.py.
-.3 fileIO.py.
-.3 tridiagM.py.
-.2 docs.
-.3 input.in.
-.3 Background docs...
-.2 logs.
-.2 tests.
-.3 testMain.py.
-.2 main.py.
-.2 README.md.
-}
-\subsection {Run Time}
-{How do we run this at runtime? ie how can you modify the inputs / outputs etc}
-\subsection {Testing}
-{Why testings important, how we found it really useful all the way through the assignment (lol). Brief overview of what tests we have included, maybe some specific problem we meet and how testing helped us solve it?}
-\clearpage
-\section{Technical Challenges and Limitations}
-{What were the main technical challenges we faced doing this. What are the limitations of our brilliant solution }
-\clearpage
-\section{Results}
-{Our fantastic results}
-
-\subsection{Black-Scholes-Merton Results}
+\subsection{4.1 Results}
 
 The number of grid points and thus the shape of the matrix depend on the values of M given. The program was run using a maturity of 12 months, a strike price of 100 and three different M values; M=12 for months, arbitrary M=40, and M=365 for days. The first three figures in Appendix 4.2 demonstrate the relationship between stock prices and option prices that satisfy the Black-Scholes equation. Each line from top to bottom represent a time step from T to 0 respectively. We can see that the distribution of the the put option prices vary greatly among the three figures. As $k$, the length between each time step decreases and the number of steps increases, the range of put option prices increases; the further the option is from maturity the lower its price. There is a reversal point in each figure which can only be spotted looking at the data in 2d, this is most obvious in the first two figures, the yellow line (option prices at time T) goes from being on top (option price is highest for some stock price $p$) to being on the bottom (option price is lowest for some stock price $p$). Therefore we can say that there is some threshold option price ($f^{*}_{n,m}$) and stock price ($p^{*}_{n,m}$) dependent on the time step ($m$) at which the slope of the curve decreases. From the 3D plots (figures 4,5 and 6), we can observe that the lower the value for k (the more steps maturity), the faster the fall in option price the further away from maturity and the greater the stock price.
 
-
-\clearpage
-\section{Conclusions}
 \clearpage
 \section*{Appendix}
+\subsection*{Appendix 4.2}
 
 \begin{figure}[h!]
 \center
@@ -290,20 +247,7 @@ The number of grid points and thus the shape of the matrix depend on the values 
 \caption{3D Plot of European Put Option Prices for $T=12$, $M=365$, $k=0.033$}
 \end{figure}
 
-
 \clearpage
-\begin{landscape}
-\begin{figure}[h!]
-\center
-\includegraphics[scale=0.8]{NASprog.pdf}
-\caption{Sparse SOR Application - Program Map}
-\end{figure}
-\end{landscape}
-
-\clearpage
-\bibliographystyle{acm}
-\bibliography{numassignmentrefs}
-
 \begin{thebibliography}{9}
 \bibitem{someitem} 
 Some Reference

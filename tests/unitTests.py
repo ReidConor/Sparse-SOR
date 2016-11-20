@@ -1,5 +1,5 @@
-# This will hold all tests for the main program
-# All future tests should follow the same namig convention (test<core_file>)
+# This will hold all unit tests for the main program
+# All future tests should follow the same naming convention (test<core_file>)
 import unittest
 from core.doMath import *
 from scipy import sparse

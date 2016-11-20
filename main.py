@@ -15,7 +15,6 @@ check if params are passed to the program, and use them if they are
 '''
 import os
 dir = os.path.dirname(__file__)
-filename = os.path.join(dir, '/relative/path/to/file/you/want')
 inputFile = (sys.argv[1] if len(sys.argv) == 2 else os.path.join(dir, './docs/input.in'))
 outputFile = (sys.argv[2] if len(sys.argv) == 3 else os.path.join(dir, './logs/nas_SOR.out'))
 file_extension = os.path.splitext(inputFile)[1]
@@ -44,7 +43,7 @@ if file_extension == ".in":
     if hasZerosOnMainDiag(A.todense()):
         resultsDict["stoppingReason"] = "Zero on diagonal"
 
-    if not isStrictlyDiagonallyDominant(A.todense()):
+    elif not isStrictlyDiagonallyDominant(A.todense()):
         resultsDict["stoppingReason"] = "Cannot proceed"
     else:
         if np.shape(A) <= (300, 300):
@@ -67,7 +66,7 @@ elif file_extension == ".mtx":
     else:
         if np.shape(A) <= (300, 300):
             genHeatMap(A.todense(), os.path.join(dir, './docs/A(.in).png'))
-            resultsDict = Sparse_SOR(A, b, 1, maxits, 1.5, np.zeros(b.shape[0]), X_seq_tolerance)
+        resultsDict = Sparse_SOR(A, b, 1, maxits, 1.5, np.zeros(b.shape[0]), X_seq_tolerance)
 
 else:
     resultsDict["stoppingReason"] = "input file error"
@@ -76,6 +75,10 @@ else:
 target.write('%-30s %-30s %-30s %-30s %-30s %-30s' % ('Stopping reason', 'Max num of iterations', 'Num of iterations', 'Machine epsilon', 'X seq tolerance', 'Residual seq tolerance'))
 target.write('\n')
 target.write('%-30s %-30s %-30s %-30s %-30s %-30s' % (resultsDict["stoppingReason"], maxits, resultsDict["iterations"], np.finfo(np.float).eps, X_seq_tolerance, resultsDict["ResidualSeqTolerance"]))
+
+if resultsDict["x"] != "":
+    target.write('\n')
+    target.write('%s' % (resultsDict["x"]))
 
 
 '''
