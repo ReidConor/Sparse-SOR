@@ -1,7 +1,0 @@
-#Matrix 3  - Small Matrix A with no 0 on the main diagonal, not diagonally dominant, none of the eigenvalues of C <1
-4
--1 0  0 -2
-1 1 -1 -2
-0 -2 -2 -1
-1 0 -2 -1
-1 2 3 4

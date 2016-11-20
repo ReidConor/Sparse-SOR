@@ -1,7 +1,0 @@
-#Matrix 4  - Small Matrix A with no 0 on the main diagonal, not diagonally dominant, one or more of the eigenvalues of C >1
-4 
--1 -2 -2 -1
-0 -1 -1 0
--1 0 -2 -1
-1 -1 -2 -2 
-1 2 3 4

@@ -12,7 +12,7 @@ f, m = fileIO.inputMatrix()
 
 '''
 This will function as the main module of tte python project
-and call all other modules that are written
+and call all other modules that aretx written
 '''
 
 
