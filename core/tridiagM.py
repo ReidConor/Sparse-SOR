@@ -75,14 +75,14 @@ def vectorB(X, S, h):
 def findPastOptionPrices(A, fNM, n, maxits, omega, x, error, T, k):
     M = int(T / k)
     fnmDict = {}
-    for i in range(M, -1, -1):
+    fnmDict[M] = fNM
+    for i in range(M-1, -1, -1):
         resultsDict = Sparse_SOR(A, fNM, n, maxits, omega, x, error)
         x = resultsDict["x"]
         fnmDict[i] = x
         fNM = x
         x = np.zeros(n)
     return fnmDict
-
 
 def runBSM(outputLogFile):
     # General parameters
@@ -115,6 +115,8 @@ def runBSM(outputLogFile):
     target.write('')
     for i in range(len(pastfnm) - 1, -1, -1):
         target.write('f_{n, %s } = %s' % (i, pastfnm[i]))
+        target.write('\n \n')
+
 
     ''' 3D PLOT'''
     genBSMPlot(S, t, pastfnm)

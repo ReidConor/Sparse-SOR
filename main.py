@@ -20,7 +20,6 @@ inputFile = (sys.argv[1] if len(sys.argv) == 2 else os.path.join(dir, './docs/in
 outputFile = (sys.argv[2] if len(sys.argv) == 3 else os.path.join(dir, './logs/nas_SOR.out'))
 file_extension = os.path.splitext(inputFile)[1]
 
-
 '''
 start logging for part one
 '''
@@ -33,8 +32,9 @@ resultsDict["iterations"] = 0
 resultsDict["diffnorm"] = ""
 resultsDict["diffnorm0"] = ""
 resultsDict["stoppingReason"] = "Unknown"
+resultsDict["ResidualSeqTolerance"] = "Not used"
 
-X_seq_tolerance = 0.005
+X_seq_tolerance = 0.0005
 
 if file_extension == ".in":
     theProblemSpace = readFileIntoDict(inputFile)
@@ -61,8 +61,8 @@ elif file_extension == ".mtx":
     if hasZerosOnMainDiag(A.todense()):
         resultsDict["stoppingReason"] = "Zero on diagonal"
 
-    elif not isStrictlyDiagDom(A.todense()):
-        resultsDict["stoppingReason"] = "Cannot proceed"
+    elif not isStrictlyDiagonallyDominant(A.todense()):
+        resultsDict["stoppingReason"] = "Cannot proceed."
 
     else:
         if np.shape(A) <= (300, 300):
@@ -75,7 +75,7 @@ else:
 
 target.write('%-30s %-30s %-30s %-30s %-30s %-30s' % ('Stopping reason', 'Max num of iterations', 'Num of iterations', 'Machine epsilon', 'X seq tolerance', 'Residual seq tolerance'))
 target.write('\n')
-target.write('%-30s %-30s %-30s %-30s %-30s %-30s' % (resultsDict["stoppingReason"], maxits, resultsDict["iterations"], 'Machine epsilon', X_seq_tolerance, 'Residual seq tolerance'))
+target.write('%-30s %-30s %-30s %-30s %-30s %-30s' % (resultsDict["stoppingReason"], maxits, resultsDict["iterations"], np.finfo(np.float).eps, X_seq_tolerance, resultsDict["ResidualSeqTolerance"]))
 
 
 '''

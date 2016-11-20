@@ -37,18 +37,18 @@ def isStrictlyDiagDom(A):
 def isStrictlyDiagonallyDominant(A):
 
     # check columns for dominance
-    col_sum = np.sum(A, axis=0)
-    diags = np.diagonal(A)
+    col_sum = np.sum(abs(A), axis=0)
+    diags = np.diagonal(abs(A))
     col_difference = col_sum - diags
     col_dom = (np.all(np.greater(diags, col_difference)))
 
     # check rows for dominance
-    row_sum = np.sum(A, axis=1)
+    row_sum = np.sum(abs(A), axis=1)
     diags_transpose = np.array([diags]).T
     row_difference = row_sum - diags_transpose
     row_dom = (np.all(np.greater(diags_transpose, row_difference)))
 
-    return col_dom & row_dom
+    return col_dom | row_dom
 
 
 '''
@@ -146,6 +146,7 @@ def Sparse_SOR(A,b,n,maxits,omega,x, error):
     resultsDict["iterations"] = k
     resultsDict["diffnorm"] = diffnorm
     resultsDict["diffnorm0"] = diffnorm0
+    resultsDict["ResidualSeqTolerance"] = "Not used"
 
     if k == maxits:
         stoppingReason = "Max Iterations reached"
